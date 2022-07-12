@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Mis Notas App</string>
+    <string name="title_activity_notas2">NotasActivity2</string>
+    <string name="title_home">Mis Notas</string>
+    <string name="title_editNota">Editar nota</string>
+    <string name="title_escribirNota">Crear nota</string>
+    <string name="title_NOTE">Notas</string>
+    <string name="title_Favoritas">Favoritas</string>
+    <string name="title_cuenta">Mi perfil</string>
+
+    //String de crear notas
+    <string name="titulo_nota">Titulo...</string>
+    <string name="subtitulo_nota">Subtitulo...</string>
+    <string name="contenido_nota">Nota...</string>
+
+
+
+    //String de login
+    <string name="mynotes">Mis Notas</string>
+    <string name="email">Email</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="entrar">Entrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desea_eliminar_la_nota">¿Desea eliminar la nota?</string>
+
+
+</resources>

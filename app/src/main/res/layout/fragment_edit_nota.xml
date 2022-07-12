@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/crema_oscuro"
+    tools:context="ui.fragment.EditNotaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/EdittituloNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:hint="@string/titulo_nota"
+            android:background="@drawable/edit_txt_shape"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:textSize="25sp"/>
+        <EditText
+            android:id="@+id/EditsubtituloNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:hint="@string/subtitulo_nota"
+            android:background="@drawable/edit_txt_shape"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:textSize="25sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/EditCgreen"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/green_box"/>
+            <ImageView
+                android:id="@+id/EditCpink"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/pink_box"/>
+            <ImageView
+                android:id="@+id/EditCyellow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/yellow_box"/>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/EditcontenidoNota"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:hint="@string/contenido_nota"
+            android:background="@drawable/edit_txt_shape"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

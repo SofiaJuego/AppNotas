@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.myapplication.NotaFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_nota">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_editarNota"
+            app:destination="@id/navigation_editNota" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_escribirNota"
+            app:destination="@id/navigation_escribirNota" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_editNota"
+        android:name="com.example.myapplication.ui.fragment.EditNotaFragment"
+        android:label="@string/title_editNota"
+        tools:layout="@layout/fragment_edit_nota">
+        <action
+            android:id="@+id/action_navigation_editarNota_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_escribirNota"
+        android:name="com.example.myapplication.ui.fragment.EscribirNotaFragment"
+        android:label="@string/title_escribirNota"
+        tools:layout="@layout/fragment_escribir_nota">
+        <action
+            android:id="@+id/action_navigation_escribirNota_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
