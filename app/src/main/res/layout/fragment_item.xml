@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="@color/crema_oscuro"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp">
 
         <View
             android:id="@+id/ViewColor"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="right"
             android:layout_margin="10dp"
             android:background="@drawable/pink_box" />
@@ -28,32 +28,37 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="Titulo"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/textViewContenido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Contenido" />
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Titulo"
+                android:fontFamily="@font/didactgothic_regular"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewfecha"
+                android:id="@+id/textViewContenido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Contenido"
+                android:textColor="@color/black"
+                android:fontFamily="@font/didactgothic_regular"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewSub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/didactgothic_regular"
                 android:maxLines="1"
                 android:text="Contenido"
-                android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textColor="#636262"
+                android:textSize="13sp" />
 
 
 

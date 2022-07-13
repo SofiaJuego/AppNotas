@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mis Notas App</string>
+    <string name="app_name">Mis Notas </string>
     <string name="title_activity_notas2">NotasActivity2</string>
     <string name="title_home">Mis Notas</string>
     <string name="title_editNota">Editar nota</string>

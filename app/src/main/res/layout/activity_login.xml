@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/crema_oscuro"
+    android:background="@color/white"
     android:padding="24dp">
 
     <ImageView
@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/portapapeles" />
+        app:srcCompat="@drawable/clips" />
 
     <TextView
         android:id="@+id/textView"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/mynotes"
-        android:textColor="@color/crema"
+        android:textColor="@color/black"
         android:textSize="40sp"
-        android:textStyle="bold|italic"
+        android:fontFamily="@font/didactgothic_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -47,9 +47,9 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="By\n Sofia Aguilar"
-        android:textColor="@color/crema"
+        android:textColor="@color/black"
         android:textSize="23sp"
-        android:textStyle="bold|italic"
+       android:fontFamily="@font/didactgothic_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />

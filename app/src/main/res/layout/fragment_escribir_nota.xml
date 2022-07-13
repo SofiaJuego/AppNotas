@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/crema_oscuro"
+    android:background="@color/gris_claro"
     android:id="@+id/container_fragment"
-    tools:context=".ui.fragment.EscribirNotaFragment">
+    tools:context="com.mynotas.notasApp.ui.fragment.EscribirNotaFragment">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,48 +18,53 @@
             android:id="@+id/tituloNota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:hint="@string/titulo_nota"
             android:background="@drawable/edit_txt_shape"
+            android:fontFamily="@font/didactgothic_regular"
+            android:hint="@string/titulo_nota"
+            android:maxLines="1"
             android:padding="15dp"
             android:textColorHint="@color/black"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
+
         <EditText
             android:id="@+id/subtituloNota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:maxLines="1"
-            android:hint="@string/subtitulo_nota"
             android:background="@drawable/edit_txt_shape"
+            android:fontFamily="@font/didactgothic_regular"
+            android:hint="@string/subtitulo_nota"
+            android:maxLines="1"
             android:padding="15dp"
+            android:textColor="#7E7D7D"
             android:textColorHint="@color/black"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/Cgreen"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:background="@drawable/green_box" />
 
-                android:background="@drawable/green_box"/>
             <ImageView
                 android:id="@+id/Cpink"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="25dp"
-                android:background="@drawable/pink_box"/>
+                android:background="@drawable/pink_box" />
+
             <ImageView
                 android:id="@+id/Cyellow"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="25dp"
-                android:background="@drawable/yellow_box"/>
+                android:background="@drawable/purple_box" />
 
 
         </LinearLayout>
@@ -68,15 +74,15 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_txt_shape"
+            android:fontFamily="@font/didactgothic_regular"
             android:gravity="start"
             android:hint="@string/contenido_nota"
-            android:background="@drawable/edit_txt_shape"
             android:padding="15dp"
             android:textColorHint="@color/black"
             android:textSize="25sp" />
 
     </LinearLayout>
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnSaveNota"

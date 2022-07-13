@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#C24229</item>
+        <item name="colorPrimary">#FA8537</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondary">#C4FF801F</item>
         <item name="colorSecondaryVariant">#FFB300</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->

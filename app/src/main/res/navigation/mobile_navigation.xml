@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.myapplication.NotaFragment"
+        android:name="com.mynotas.notasApp.ui.fragment.NotaFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_nota">
         <action
@@ -20,17 +20,20 @@
 
     <fragment
         android:id="@+id/navigation_editNota"
-        android:name="com.example.myapplication.ui.fragment.EditNotaFragment"
-        android:label="@string/title_editNota"
+        android:name="com.mynotas.notasApp.ui.fragment.EditNotaFragment"
+        android:label="Editar nota"
         tools:layout="@layout/fragment_edit_nota">
         <action
             android:id="@+id/action_navigation_editarNota_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            app:destination="@id/navigation_home"/>
+        <argument
+            android:name="data"
+            app:argType="com.mynotas.notasApp.entity.NotaEntity" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_escribirNota"
-        android:name="com.example.myapplication.ui.fragment.EscribirNotaFragment"
+        android:name="com.mynotas.notasApp.ui.fragment.EscribirNotaFragment"
         android:label="@string/title_escribirNota"
         tools:layout="@layout/fragment_escribir_nota">
         <action

@@ -9,14 +9,14 @@
     //Paleta de colores de la app
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="orange">#C24229</color>
+    <color name="coral">#FF1744</color>
     <color name="crema">#C4A589</color>
-    <color name="crema_oscuro">#C8E7E7</color>
+    <color name="gris_claro">#D6D4D4</color>
 
     //Para el selector de colores de las notas
-    <color name="red">#ED0404</color>
-    <color name="green">#2FEC4E</color>
-    <color name="yellow">#E2F427</color>
+    <color name="red">#FF8A80</color>
+    <color name="green">#84FFFF</color>
+    <color name="yellow">#B388FF</color>
     <color name="pink">#FF1E6A</color>
 
 
