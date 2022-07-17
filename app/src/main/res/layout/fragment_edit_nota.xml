@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris_claro"
+    android:padding="5dp"
     tools:context="com.mynotas.notasApp.ui.fragment.EditNotaFragment">
 
     <LinearLayout
@@ -41,26 +42,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/Cgreen"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/green_box"/>
+                android:background="@drawable/green_box" />
+
             <ImageView
                 android:id="@+id/Cpink"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="25dp"
-                android:background="@drawable/pink_box"/>
+                android:background="@drawable/pink_box" />
+
             <ImageView
-                android:id="@+id/Cyellow"
+                android:id="@+id/Cpurple"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="25dp"
-                android:background="@drawable/purple_box"/>
+                android:background="@drawable/purple_box" />
 
 
         </LinearLayout>
@@ -81,12 +84,12 @@
 
     </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnSaveEditNota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="26dp"
-            android:src="@drawable/ic_baseline_check_24" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSaveEditNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="26dp"
+        android:src="@drawable/ic_baseline_check_24" />
 
 </FrameLayout>

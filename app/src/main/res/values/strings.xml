@@ -10,9 +10,8 @@
 
     //String de crear notas
     <string name="titulo_nota">Titulo...</string>
-    <string name="subtitulo_nota">Subtitulo...</string>
+    <string name="subtitulo_nota">Comentario...</string>
     <string name="contenido_nota">Nota...</string>
-
 
 
     //String de login
@@ -23,6 +22,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="desea_eliminar_la_nota">¿Desea eliminar la nota?</string>
+    <string name="search">Search</string>
 
 
 </resources>

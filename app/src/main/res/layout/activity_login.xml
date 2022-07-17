@@ -44,7 +44,7 @@
         android:id="@+id/textBy"
         android:layout_width="248dp"
         android:layout_height="73dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="2dp"
         android:gravity="center"
         android:text="By\n Sofia Aguilar"
         android:textColor="@color/black"

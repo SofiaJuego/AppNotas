@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris_claro"
-    android:id="@+id/container_fragment"
+    android:padding="5dp"
     tools:context="com.mynotas.notasApp.ui.fragment.EscribirNotaFragment">
 
 
@@ -60,7 +61,7 @@
                 android:background="@drawable/pink_box" />
 
             <ImageView
-                android:id="@+id/Cyellow"
+                android:id="@+id/Cpurple"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="25dp"
@@ -88,8 +89,8 @@
         android:id="@+id/btnSaveNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
         android:layout_gravity="bottom|right"
+        android:layout_margin="24dp"
         android:src="@drawable/ic_baseline_check_24"
         tools:ignore="ContentDescription,RtlHardcoded" />
 
