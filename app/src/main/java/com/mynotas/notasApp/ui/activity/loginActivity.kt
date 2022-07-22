@@ -18,9 +18,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
-
             startActivity(Intent(this, MainActivity::class.java))
-        }, 2000)
+            finish()
+        }, 0)
     }
 
 }
