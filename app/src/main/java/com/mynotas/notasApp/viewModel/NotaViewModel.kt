@@ -31,7 +31,6 @@ class NotaViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getLilaNotes(): LiveData<List<NotaEntity>> = repository.getLilaNotes()
 
-
     fun deleteNota(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(id)

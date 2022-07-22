@@ -70,9 +70,9 @@ class EscribirNotaFragment : Fragment() {
             priority)
         viewModel.addNota(notaEntity)
         Toast.makeText(requireContext(), "Se creo la nota correctamente", Toast.LENGTH_LONG).show()
-
-        Navigation.findNavController(it!!)
-            .navigate(R.id.action_navigation_escribirNota_to_navigation_home)
+        activity?.onBackPressed()
+        /*Navigation.findNavController(it!!)
+            .navigate(R.id.action_navigation_escribirNota_to_navigation_home)*/
 
     }
 

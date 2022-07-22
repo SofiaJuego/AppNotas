@@ -39,6 +39,10 @@
         <entry key="..\:/Practicando/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1675925925925926" />
         <entry key="..\:/Practicando/app/src/main/res/menu/delete_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Practicando/app/src/main/res/menu/search_menu.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/fragment_escribir_nota.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/fragment_item.xml" value="0.1403985507246377" />
+        <entry key="app/src/main/res/layout/fragment_nota.xml" value="0.14814814814814814" />
       </map>
     </option>
   </component>

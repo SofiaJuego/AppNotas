@@ -42,48 +42,25 @@ class NotaFragment : Fragment(), MenuProvider {
         // <!-- MOSTRAR TODAS LAS NOTAS -->
         viewModel.getNota().observe(viewLifecycleOwner) { notaList ->
             oldMyNotas = notaList as ArrayList<NotaEntity>
-            adapter = NotaAdapter(requireContext(), notaList)
+            adapter = NotaAdapter(notaList)
             binding.rcvAllNotas.adapter = adapter
 
         }
         binding.allNotas.setOnClickListener {
-
-            viewModel.getNota().observe(viewLifecycleOwner) { notaList ->
-                oldMyNotas = notaList as ArrayList<NotaEntity>
-                adapter = NotaAdapter(requireContext(), notaList)
-                binding.rcvAllNotas.adapter = adapter
-
-            }
+            adapter.filterAll()
         }
         //<!-- FILTER POR COLOR -->
         //Por color rojo
         binding.filterRojo.setOnClickListener {
-
-            viewModel.getRojoNotes().observe(viewLifecycleOwner) { notaList ->
-                oldMyNotas = notaList as ArrayList<NotaEntity>
-                adapter = NotaAdapter(requireContext(), notaList)
-                binding.rcvAllNotas.adapter = adapter
-
-            }
+            adapter.filterRed()
         }
         //Por color verde
         binding.filterVerde.setOnClickListener {
-            viewModel.getVerdeNotes().observe(viewLifecycleOwner) { notaList ->
-                oldMyNotas = notaList as ArrayList<NotaEntity>
-                adapter = NotaAdapter(requireContext(), notaList)
-                binding.rcvAllNotas.adapter = adapter
-
-            }
+            adapter.filterGreen()
         }
         //Por color lila
         binding.filterLila.setOnClickListener {
-
-            viewModel.getLilaNotes().observe(viewLifecycleOwner) { notaList ->
-                oldMyNotas = notaList as ArrayList<NotaEntity>
-                adapter = NotaAdapter(requireContext(), notaList)
-                binding.rcvAllNotas.adapter = adapter
-
-            }
+            adapter.filterLila()
         }
 
         //Boton agregar nota
