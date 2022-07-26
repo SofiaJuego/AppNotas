@@ -17,10 +17,12 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-
-            startActivity(Intent(this, MainActivity::class.java))
-        }, 2000)
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            },
+            2000)
     }
 
 }
