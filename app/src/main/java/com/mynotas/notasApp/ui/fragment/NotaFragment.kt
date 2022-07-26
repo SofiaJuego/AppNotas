@@ -25,7 +25,6 @@ class NotaFragment : Fragment(), MenuProvider {
     private var oldMyNotas = arrayListOf<NotaEntity>()
     private lateinit var adapter: NotaAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -39,22 +38,52 @@ class NotaFragment : Fragment(), MenuProvider {
         //Layout Manager
         val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         binding.rcvAllNotas.layoutManager = staggeredGridLayoutManager
+
         // <!-- MOSTRAR TODAS LAS NOTAS -->
         viewModel.getNota().observe(viewLifecycleOwner) { notaList ->
             oldMyNotas = notaList as ArrayList<NotaEntity>
             adapter = NotaAdapter(requireContext(), notaList)
             binding.rcvAllNotas.adapter = adapter
 
-
         }
+        binding.allNotas.setOnClickListener {
 
+            viewModel.getNota().observe(viewLifecycleOwner) { notaList ->
+                oldMyNotas = notaList as ArrayList<NotaEntity>
+                adapter = NotaAdapter(requireContext(), notaList)
+                binding.rcvAllNotas.adapter = adapter
 
+            }
+        }
         //<!-- FILTER POR COLOR -->
-        with(binding){
-            allNotas.setOnClickListener { viewModel.getNota() }
-            filterRojo.setOnClickListener { viewModel.getRojoNotes() }
-            filterVerde.setOnClickListener { viewModel.getVerdeNotes() }
-            filterLila.setOnClickListener { viewModel.getLilaNotes() }
+        //Por color rojo
+        binding.filterRojo.setOnClickListener {
+
+            viewModel.getRojoNotes().observe(viewLifecycleOwner) { notaList ->
+                oldMyNotas = notaList as ArrayList<NotaEntity>
+                adapter = NotaAdapter(requireContext(), notaList)
+                binding.rcvAllNotas.adapter = adapter
+
+            }
+        }
+        //Por color verde
+        binding.filterVerde.setOnClickListener {
+            viewModel.getVerdeNotes().observe(viewLifecycleOwner) { notaList ->
+                oldMyNotas = notaList as ArrayList<NotaEntity>
+                adapter = NotaAdapter(requireContext(), notaList)
+                binding.rcvAllNotas.adapter = adapter
+
+            }
+        }
+        //Por color lila
+        binding.filterLila.setOnClickListener {
+
+            viewModel.getLilaNotes().observe(viewLifecycleOwner) { notaList ->
+                oldMyNotas = notaList as ArrayList<NotaEntity>
+                adapter = NotaAdapter(requireContext(), notaList)
+                binding.rcvAllNotas.adapter = adapter
+
+            }
         }
 
         //Boton agregar nota
@@ -65,7 +94,6 @@ class NotaFragment : Fragment(), MenuProvider {
 
         return binding.root
     }
-
 
     //Buscar nota
 
@@ -109,6 +137,5 @@ class NotaFragment : Fragment(), MenuProvider {
         adapter.filtering(newFilteredList)
 
     }
+
 }
-
-

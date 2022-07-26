@@ -11,7 +11,8 @@ import com.mynotas.notasApp.entity.NotaEntity
 import com.mynotas.notasApp.ui.fragment.NotaFragmentDirections
 
 
-class NotaAdapter(val requireContext: Context, var notaList: List<NotaEntity>) : RecyclerView.Adapter<NotaAdapter.NotaViewHolder>() {
+class NotaAdapter(val requireContext: Context, var notaList: List<NotaEntity>) :
+    RecyclerView.Adapter<NotaAdapter.NotaViewHolder>() {
 
     fun filtering(newFilteredList: ArrayList<NotaEntity>) {
         notaList = newFilteredList
