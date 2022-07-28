@@ -1,6 +1,5 @@
 package com.mynotas.notasApp.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -17,7 +16,7 @@ class NotaAdapter(var notaList: ArrayList<NotaEntity>) :
     var listaFiltrada: ArrayList<NotaEntity> = notaList
 
     fun filtering(newFilteredList: ArrayList<NotaEntity>) {
-        notaList = newFilteredList
+       listaFiltrada = newFilteredList
         notifyDataSetChanged()
     }
 

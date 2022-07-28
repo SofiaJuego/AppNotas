@@ -1,7 +1,12 @@
 package com.mynotas.notasApp.ui.fragment
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
@@ -81,6 +86,7 @@ class NotaFragment : Fragment(), MenuProvider {
         item?.expandActionView()
         val buscarView = item.actionView as SearchView
         buscarView.queryHint = "Buscar nota.."
+
         buscarView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -88,7 +94,8 @@ class NotaFragment : Fragment(), MenuProvider {
                 return false
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
+            override fun onQueryTextChange(query: String?): Boolean {
+                notesFilter(query)
                 return true
             }
         })
@@ -106,7 +113,7 @@ class NotaFragment : Fragment(), MenuProvider {
         val newFilteredList = arrayListOf<NotaEntity>()
 
         for (i in oldMyNotas) {
-            if (i.Titulo.contains(query!!) || i.Subtitulo.contains(query)) {
+            if (i.Titulo.contains(query!!, ignoreCase = true) || i.Subtitulo.contains(query,ignoreCase = true)) {
                 newFilteredList.add(i)
             }
         }

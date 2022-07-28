@@ -2,8 +2,12 @@ package com.mynotas.notasApp.ui.fragment
 
 import android.os.Bundle
 import android.text.format.DateFormat
-import android.text.format.DateFormat.format
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.MenuHost
@@ -11,7 +15,6 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -25,17 +28,15 @@ import java.util.*
 class EditNotaFragment : Fragment(), MenuProvider {
     private lateinit var binding: FragmentEditNotaBinding
 
-    val notes by navArgs<EditNotaFragmentArgs>()
+    private val notes by navArgs<EditNotaFragmentArgs>()
     var priority: String = "1"
-    val viewModel: NotaViewModel by viewModels()
+    private val viewModel: NotaViewModel by viewModels()
 
-
-    override fun onCreateView(
+        override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentEditNotaBinding.inflate(layoutInflater, container, false)
-
 
         //Menu eliminar
         val menuHost: MenuHost = requireActivity()
@@ -91,7 +92,7 @@ class EditNotaFragment : Fragment(), MenuProvider {
 
         binding.btnSaveEditNota.setOnClickListener {
 
-            ubdateNotas(it)
+            ubdateNotas()
         }
 
 
@@ -101,7 +102,7 @@ class EditNotaFragment : Fragment(), MenuProvider {
     }
 
     //EDITAR NOTA
-    private fun ubdateNotas(it: View?) {
+    private fun ubdateNotas() {
 
         val titulo = binding.EdittituloNota.text.toString()
         val subtitulo = binding.EditsubtituloNota.text.toString()
@@ -118,9 +119,8 @@ class EditNotaFragment : Fragment(), MenuProvider {
             priority)
         viewModel.updateNota(notaEntity)
         Toast.makeText(requireContext(), "Se edito la nota correctamente", Toast.LENGTH_LONG).show()
+        activity?.onBackPressed()
 
-        Navigation.findNavController(it!!)
-            .navigate(R.id.action_navigation_editarNota_to_navigation_home)
 
     }
 
@@ -151,11 +151,12 @@ class EditNotaFragment : Fragment(), MenuProvider {
         val texViewCancelar = dialogDelete.findViewById<TextView>(R.id.dialog_cancelar)
 
         texViewEliminar?.setOnClickListener {
-            viewModel.deleteNota(notes.data.id!!)
+            notes.data.id?.let { idNota ->
+            viewModel.deleteNota(idNota)
             Toast.makeText(requireContext(), "Se elimino la nota correctamente", Toast.LENGTH_LONG)
                 .show()
             findNavController().navigate(R.id.action_navigation_editarNota_to_navigation_home)
-
+        }
             dialogDelete.dismiss()
         }
 

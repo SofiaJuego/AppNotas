@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/gris_claro"
     android:padding="5dp"
-    tools:context="ui.fragment.NotaFragment">
+    tools:context="ui.fragment.NotaFragment"
+    android:id="@+id/fragment_home">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import com.mynotas.notasApp.R
 import com.mynotas.notasApp.databinding.FragmentEscribirNotaBinding
 import com.mynotas.notasApp.entity.NotaEntity
@@ -20,7 +19,6 @@ class EscribirNotaFragment : Fragment() {
     private lateinit var binding: FragmentEscribirNotaBinding
     var priority: String = "1"
     val viewModel: NotaViewModel by viewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -56,6 +54,9 @@ class EscribirNotaFragment : Fragment() {
 
     // CREAMOS LA NOTA
     private fun createNota(it: View?) {
+        if (binding.tituloNota.text.isEmpty() || binding.contenidoNota.text.isEmpty()){
+            Toast.makeText(requireContext(),"Llena los campos", Toast.LENGTH_LONG).show()
+        }else {
         val titulo = binding.tituloNota.text.toString()
         val subtitulo = binding.subtituloNota.text.toString()
         val contenido = binding.contenidoNota.text.toString()
@@ -68,12 +69,19 @@ class EscribirNotaFragment : Fragment() {
             Contenido = contenido,
             Date = dateNota.toString(),
             priority)
+
         viewModel.addNota(notaEntity)
         Toast.makeText(requireContext(), "Se creo la nota correctamente", Toast.LENGTH_LONG).show()
         activity?.onBackPressed()
-        /*Navigation.findNavController(it!!)
-            .navigate(R.id.action_navigation_escribirNota_to_navigation_home)*/
+
+        }
+
+
 
     }
+
+
+
+
 
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_edit_nota">
         <action
             android:id="@+id/action_navigation_editarNota_to_navigation_home"
-            app:destination="@id/navigation_home"/>
+            app:destination="@id/navigation_home" />
         <argument
             android:name="data"
             app:argType="com.mynotas.notasApp.entity.NotaEntity" />
