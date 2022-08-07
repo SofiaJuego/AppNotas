@@ -17,8 +17,8 @@ import java.util.*
 
 class EscribirNotaFragment : Fragment() {
     private lateinit var binding: FragmentEscribirNotaBinding
-    private var priority: String = "1"
-    private val viewModel: NotaViewModel by viewModels()
+    var priority: String = "1"
+    val viewModel: NotaViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -54,10 +54,7 @@ class EscribirNotaFragment : Fragment() {
 
     // CREAMOS LA NOTA
     private fun createNota(it: View?) {
-        val validateTitle = binding.tituloNota.text
-        val validateContent = binding.contenidoNota.text
-
-        if (validateTitle.isEmpty() || validateContent.isEmpty()){
+        if (binding.tituloNota.text.isEmpty() || binding.contenidoNota.text.isEmpty()){
             Toast.makeText(requireContext(),"Llena los campos", Toast.LENGTH_LONG).show()
         }else {
         val titulo = binding.tituloNota.text.toString()
