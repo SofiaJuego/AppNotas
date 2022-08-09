@@ -26,7 +26,7 @@ class EscribirNotaFragment : Fragment() {
         binding = FragmentEscribirNotaBinding.inflate(layoutInflater, container, false)
 
         binding.btnSaveNota.setOnClickListener {
-            createNota(it)
+            validateNote()
         }
         //AGREGAR COLOR A LA NOTA
         binding.Cgreen.setOnClickListener {
@@ -47,44 +47,42 @@ class EscribirNotaFragment : Fragment() {
             binding.Cpink.setImageResource(0)
             binding.Cgreen.setImageResource(0)
         }
-
-
         return binding.root
     }
 
     // CREAMOS LA NOTA
-    private fun createNota(it: View?) {
-        val validateTitle = binding.tituloNota.text
-        val validateContent = binding.contenidoNota.text
-
-        if (validateTitle.isEmpty() || validateContent.isEmpty()){
-            Toast.makeText(requireContext(),"Llena los campos", Toast.LENGTH_LONG).show()
-        }else {
+    private fun validateNote() {
         val titulo = binding.tituloNota.text.toString()
         val subtitulo = binding.subtituloNota.text.toString()
         val contenido = binding.contenidoNota.text.toString()
+
+        if (titulo.isEmpty() || contenido.isEmpty()) {
+            Toast.makeText(requireContext(), "Llena los campos", Toast.LENGTH_LONG).show()
+        } else {
+            createNote(titulo = titulo, subtitulo = subtitulo, contenido = contenido)
+            Toast.makeText(requireContext(), "Se creo la nota correctamente", Toast.LENGTH_LONG).show()
+            activity?.onBackPressed()
+        }
+    }
+
+    private fun createNote(
+        titulo: String,
+        subtitulo: String,
+        contenido: String,
+    ) {
         val d = Date()
         val dateNota: CharSequence = DateFormat.format("MMMM d, yyy", d.time)
 
-        val notaEntity = NotaEntity(null,
+        val notaEntity = NotaEntity(
+            null,
             Titulo = titulo,
             Subtitulo = subtitulo,
             Contenido = contenido,
             Date = dateNota.toString(),
-            priority)
+            priority
+        )
 
         viewModel.addNota(notaEntity)
-        Toast.makeText(requireContext(), "Se creo la nota correctamente", Toast.LENGTH_LONG).show()
-        activity?.onBackPressed()
-
-        }
-
-
-
     }
-
-
-
-
 
 }

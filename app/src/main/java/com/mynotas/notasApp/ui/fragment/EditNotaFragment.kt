@@ -32,11 +32,12 @@ class EditNotaFragment : Fragment(), MenuProvider {
     var priority: String = "1"
     private val viewModel: NotaViewModel by viewModels()
 
-        override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentEditNotaBinding.inflate(layoutInflater, container, false)
+
 
         //Menu eliminar
         val menuHost: MenuHost = requireActivity()
@@ -116,7 +117,8 @@ class EditNotaFragment : Fragment(), MenuProvider {
             Subtitulo = subtitulo,
             Contenido = contenido,
             Date = dateNota.toString(),
-            priority)
+            priority
+        )
         viewModel.updateNota(notaEntity)
         Toast.makeText(requireContext(), "Se edito la nota correctamente", Toast.LENGTH_LONG).show()
         activity?.onBackPressed()
@@ -127,22 +129,20 @@ class EditNotaFragment : Fragment(), MenuProvider {
     //MENU DE ELIMINAR
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menuInflater.inflate(R.menu.delete_menu, menu)
-
-
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-
-        if (menuItem.itemId == R.id.eliminar_menu) {
-
-            deleteNota()
+        when (menuItem.itemId) {
+            R.id.eliminar_menu -> {
+                openDialogDelete()
+            }
+            else -> return false
 
         }
         return true
-
     }
 
-    private fun deleteNota() {
+    private fun openDialogDelete() {
 
         val dialogDelete = BottomSheetDialog(requireContext(), R.style.BottomSheetStyle)
         dialogDelete.setContentView(R.layout.dialog_delete)
@@ -152,11 +152,11 @@ class EditNotaFragment : Fragment(), MenuProvider {
 
         texViewEliminar?.setOnClickListener {
             notes.data.id?.let { idNota ->
-            viewModel.deleteNota(idNota)
-            Toast.makeText(requireContext(), "Se elimino la nota correctamente", Toast.LENGTH_LONG)
-                .show()
-            findNavController().navigate(R.id.action_navigation_editarNota_to_navigation_home)
-        }
+                viewModel.deleteNota(idNota)
+                Toast.makeText(requireContext(), "Se elimino la nota correctamente", Toast.LENGTH_LONG)
+                    .show()
+                findNavController().navigate(R.id.action_navigation_editarNota_to_navigation_home)
+            }
             dialogDelete.dismiss()
         }
 

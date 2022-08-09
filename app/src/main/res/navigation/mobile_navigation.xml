@@ -35,9 +35,5 @@
         android:id="@+id/navigation_escribirNota"
         android:name="com.mynotas.notasApp.ui.fragment.EscribirNotaFragment"
         android:label="@string/title_escribirNota"
-        tools:layout="@layout/fragment_escribir_nota">
-        <action
-            android:id="@+id/action_navigation_escribirNota_to_navigation_home"
-            app:destination="@id/navigation_home" />
-    </fragment>
+        tools:layout="@layout/fragment_escribir_nota"/>
 </navigation>
