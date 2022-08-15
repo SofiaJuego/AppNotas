@@ -56,20 +56,17 @@ class EscribirNotaFragment : Fragment() {
         val subtitulo = binding.subtituloNota.text.toString()
         val contenido = binding.contenidoNota.text.toString()
 
+
         if (titulo.isEmpty() || contenido.isEmpty()) {
-            Toast.makeText(requireContext(), "Llena los campos", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Llena los campos", Toast.LENGTH_SHORT).show()
         } else {
             createNote(titulo = titulo, subtitulo = subtitulo, contenido = contenido)
-            Toast.makeText(requireContext(), "Se creo la nota correctamente", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Se creo la nota correctamente", Toast.LENGTH_SHORT).show()
             activity?.onBackPressed()
         }
     }
 
-    private fun createNote(
-        titulo: String,
-        subtitulo: String,
-        contenido: String,
-    ) {
+    private fun createNote(titulo: String, subtitulo: String, contenido: String) {
         val d = Date()
         val dateNota: CharSequence = DateFormat.format("MMMM d, yyy", d.time)
 
@@ -85,4 +82,8 @@ class EscribirNotaFragment : Fragment() {
         viewModel.addNota(notaEntity)
     }
 
+
+
 }
+
+

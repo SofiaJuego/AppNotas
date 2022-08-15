@@ -77,6 +77,8 @@ class NotaFragment : Fragment(), MenuProvider {
         return binding.root
     }
 
+
+
     //Buscar nota
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -93,21 +95,18 @@ class NotaFragment : Fragment(), MenuProvider {
                 notesFilter(query)
                 return false
             }
-
             override fun onQueryTextChange(query: String?): Boolean {
                 notesFilter(query)
-                return true
-            }
+                return true }
         })
 
-
     }
-
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return false
     }
 
-    //Buscar nota
+
+    //Buscar nota por filtro de colores
     private fun notesFilter(query: String?) {
 
         val newFilteredList = arrayListOf<NotaEntity>()

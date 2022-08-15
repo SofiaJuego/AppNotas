@@ -12,6 +12,9 @@
     <color name="orange">#F59F3F</color>
     <color name="lila">#AD7DC9</color>
     <color name="gris_claro">#D6D4D4</color>
+    <color name="gris_oscuro">#1B000000</color>
+    <color name="orange_transp">#C1F59F3F</color>
+    <color name="lila_transp">#C6AD7DC9</color>
 
     //Para el selector de colores de las notas
     <color name="red">#FF8A80</color>

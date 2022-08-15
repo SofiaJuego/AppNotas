@@ -29,35 +29,38 @@
                 android:id="@+id/allNotas"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_filter_alt_24" />
+                android:src="@drawable/ic_baseline_filter_alt_24"
+                android:elevation="7dp"/>
 
             <TextView
                 android:id="@+id/filterRojo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/btn_filter_shape"
+                android:background="@drawable/efect_click"
+                android:clickable="true"
                 android:fontFamily="@font/didactgothic_regular"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="10dp"
-                android:text="Rojo"
+                android:text="@string/rojo"
                 android:textColor="@color/red"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:focusable="true" />
 
             <TextView
                 android:id="@+id/filterVerde"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/btn_filter_shape"
+                android:background="@drawable/efect_click"
                 android:fontFamily="@font/didactgothic_regular"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="10dp"
-                android:text="Verde"
+                android:text="@string/verde"
                 android:textColor="@color/green"
                 android:textSize="18sp" />
 
@@ -66,13 +69,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/btn_filter_shape"
+                android:background="@drawable/efect_click"
                 android:fontFamily="@font/didactgothic_regular"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="10dp"
-                android:text="Lila"
+                android:text="@string/lila"
                 android:textColor="@color/purple"
                 android:textSize="18sp" />
 
@@ -81,6 +84,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvAllNotas"
+            android:layoutAnimation="@anim/layout_animation"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

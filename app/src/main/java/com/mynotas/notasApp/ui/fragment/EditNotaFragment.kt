@@ -93,7 +93,7 @@ class EditNotaFragment : Fragment(), MenuProvider {
 
         binding.btnSaveEditNota.setOnClickListener {
 
-            ubdateNotas()
+            validateEditNote()
         }
 
 
@@ -101,13 +101,23 @@ class EditNotaFragment : Fragment(), MenuProvider {
 
         return binding.root
     }
-
-    //EDITAR NOTA
-    private fun ubdateNotas() {
-
+    //Validamos que los campos esten llenos
+    private fun validateEditNote() {
         val titulo = binding.EdittituloNota.text.toString()
         val subtitulo = binding.EditsubtituloNota.text.toString()
         val contenido = binding.EditcontenidoNota.text.toString()
+
+        if (titulo.isEmpty() || contenido.isEmpty()) {
+            Toast.makeText(requireContext(), "Llena los campos", Toast.LENGTH_SHORT).show()
+        } else {
+            udateNotas(titulo = titulo, subtitulo = subtitulo, contenido = contenido)
+            Toast.makeText(requireContext(), "Se edito la nota correctamente", Toast.LENGTH_SHORT).show()
+            activity?.onBackPressed()
+        }
+    }
+
+    //EDITAR NOTA
+    private fun udateNotas(titulo: String, subtitulo: String, contenido: String) {
         val d = Date()
         val dateNota: CharSequence = DateFormat.format("MMMM d, yyy", d.time)
 
@@ -120,8 +130,7 @@ class EditNotaFragment : Fragment(), MenuProvider {
             priority
         )
         viewModel.updateNota(notaEntity)
-        Toast.makeText(requireContext(), "Se edito la nota correctamente", Toast.LENGTH_LONG).show()
-        activity?.onBackPressed()
+
 
 
     }

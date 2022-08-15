@@ -8,14 +8,21 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.mynotas.notasApp.ui.fragment.NotaFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_nota">
+        android:label="@string/title_home">
         <action
             android:id="@+id/action_navigation_home_to_navigation_editarNota"
-            app:destination="@id/navigation_editNota" />
+            app:destination="@id/navigation_editNota"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_righ"
+            app:popEnterAnim="@anim/from_righ"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_escribirNota"
-            app:destination="@id/navigation_escribirNota" />
+            app:destination="@id/navigation_escribirNota"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_righ"
+            app:popEnterAnim="@anim/from_righ"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
 
     <fragment

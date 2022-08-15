@@ -5,7 +5,6 @@
     <item
         android:id="@+id/eliminar_menu"
         android:icon="@drawable/ic_baseline_delete_24"
-        android:iconTint="@color/black"
-        android:title="Eliminar"
+        android:title="@string/eliminar"
         app:showAsAction="always" />
 </menu>

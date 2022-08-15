@@ -23,6 +23,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="desea_eliminar_la_nota">¿Desea eliminar la nota?</string>
     <string name="search">Search</string>
+    <string name="rojo">Rojo</string>
+    <string name="rojo_">Rojo</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="verde">Verde</string>
+    <string name="lila">Lila</string>
 
 
 </resources>
